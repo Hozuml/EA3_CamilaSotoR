@@ -14,5 +14,13 @@ with open("biblioteca.json", mode="w") as archivoJson:
     json.dump(leerJson,archivoJson, indent=4)
 
 # EDITAR USUARIO with open("biblioteca.json", mode="w") as archivoJson:
-
+def editarJson(UsuarioID:int):
+    with open("biblioteca.json", mode="w") as editarJson:
+        leerJson=json.dump(editarJson)
 #ELIMINAR USUARIO
+def eliminarUsuario(UsuarioID:int):
+    with open("biblioteca.json", mode="r") as eliminarJson:
+        leerJson=json.load(eliminarJson)
+    for Usuario in (leerJson["Usuario"]):
+        if Usuario["ID"] == UsuarioID:
+            leerJson["UsuarioID"].pop
